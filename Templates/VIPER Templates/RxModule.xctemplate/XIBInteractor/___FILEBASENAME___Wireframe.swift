@@ -9,8 +9,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 final class ___VARIABLE_moduleName___Wireframe: BaseWireframe {
 

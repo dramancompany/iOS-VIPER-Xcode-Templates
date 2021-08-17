@@ -9,6 +9,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ___VARIABLE_moduleName___ViewController: UIViewController {
 
@@ -16,10 +18,26 @@ final class ___VARIABLE_moduleName___ViewController: UIViewController {
 
     var presenter: ___VARIABLE_moduleName___PresenterInterface!
 
+    // MARK: - Private properties -
+    
+    private let disposeBag = DisposeBag()
+
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        presenter.isLoading
+//            .bind(to: rx.isLoading)
+//            .disposed(by: disposeBag)
+//        presenter.error
+//            .bind(to: rx.displayableError)
+//            .disposed(by: disposeBag)
+
+		// TODO: setup view
+
+        presenter.actions.onNext(.viewDidLoad)
+        presenter.events.onNext(.viewDidLoad)
     }
 
 }

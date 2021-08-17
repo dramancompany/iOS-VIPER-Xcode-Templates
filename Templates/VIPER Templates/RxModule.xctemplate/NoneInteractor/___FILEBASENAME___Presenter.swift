@@ -14,11 +14,18 @@ import RxCocoa
 
 final class ___VARIABLE_moduleName___Presenter {
 
+    // MARK: - Public properties -
+    
+    let inputs: ___VARIABLE_moduleName___PresenterInputs
+    let outputs: ___VARIABLE_moduleName___PresenterOutputs
+    let events = PublishSubject<___VARIABLE_moduleName___PresenterEvents>()
+    
     // MARK: - Private properties -
 
     private unowned let view: ___VARIABLE_moduleName___ViewInterface
     private let interactor: ___VARIABLE_moduleName___InteractorInterface
     private let wireframe: ___VARIABLE_moduleName___WireframeInterface
+    private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle -
 
@@ -26,15 +33,24 @@ final class ___VARIABLE_moduleName___Presenter {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
+        
+        // TODO: define input & output
+
+        self.inputs = ___VARIABLE_moduleName___PresenterInputs()
+        self.outputs = ___VARIABLE_moduleName___PresenterOutputs()
+
+        // TODO: bindings
+
+        self.events.subscribe(onNext: { [weak self] action in
+            switch action {
+            case .viewDidLoad:
+                break
+            }
+        }).disposed(by: disposeBag)
     }
 }
 
 // MARK: - Extensions -
 
 extension ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___PresenterInterface {
-
-    func configure(with output: ___VARIABLE_moduleName___.ViewOutput) -> ___VARIABLE_moduleName___.ViewInput {
-        return ___VARIABLE_moduleName___.ViewInput()
-    }
-
 }

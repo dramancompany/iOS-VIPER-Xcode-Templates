@@ -18,15 +18,21 @@ final class ___VARIABLE_moduleName___ViewController: UIViewController {
 
     var presenter: ___VARIABLE_moduleName___PresenterInterface!
 
-    // MARK: - Private properties -
+    // MARK: - Lifecycle -
 
+    // MARK: - Private properties -
+    
     private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+
+        // TODO: setup view
+        // TODO: bindings
+
+        presenter.events.onNext(.viewDidLoad)
     }
 
 }
@@ -34,14 +40,4 @@ final class ___VARIABLE_moduleName___ViewController: UIViewController {
 // MARK: - Extensions -
 
 extension ___VARIABLE_moduleName___ViewController: ___VARIABLE_moduleName___ViewInterface {
-}
-
-private extension ___VARIABLE_moduleName___ViewController {
-
-    func setupView() {
-        let output = ___VARIABLE_moduleName___.ViewOutput()
-
-        let input = presenter.configure(with: output)
-    }
-
 }

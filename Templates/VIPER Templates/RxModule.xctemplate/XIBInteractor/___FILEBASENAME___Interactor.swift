@@ -9,7 +9,6 @@
 //
 
 import Foundation
-import RxSwift
 
 final class ___VARIABLE_moduleName___Interactor {
 }

@@ -9,23 +9,50 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class ___VARIABLE_moduleName___Presenter {
+
+    // MARK: - Public properties -
+    
+    let actions = PublishSubject<___VARIABLE_moduleName___PresenterActions>()
+    let events = PublishSubject<___VARIABLE_moduleName___PresenterEvents>()
+    
+    let isLoading = BehaviorRelay<Bool>(value: false)
+    let error = PublishSubject<Error>()
 
     // MARK: - Private properties -
 
     private unowned let view: ___VARIABLE_moduleName___ViewInterface
     private let wireframe: ___VARIABLE_moduleName___WireframeInterface
+    private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle -
 
     init(view: ___VARIABLE_moduleName___ViewInterface, wireframe: ___VARIABLE_moduleName___WireframeInterface) {
         self.view = view
         self.wireframe = wireframe
+        self.setup()
     }
 }
 
 // MARK: - Extensions -
 
 extension ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___PresenterInterface {
+    private func setup() {
+        actions.subscribe(onNext: { [weak self] action in
+            switch action {
+            case .viewDidLoad:
+                break
+            }
+        }).disposed(by: disposeBag)
+        
+        events.subscribe(onNext: { [weak self] action in
+            switch action {
+            case .viewDidLoad:
+                break
+            }
+        }).disposed(by: disposeBag)
+    }
 }

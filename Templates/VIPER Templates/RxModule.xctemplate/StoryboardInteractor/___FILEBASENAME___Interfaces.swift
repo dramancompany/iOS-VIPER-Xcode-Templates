@@ -18,19 +18,23 @@ protocol ___VARIABLE_moduleName___WireframeInterface: WireframeInterface {
 protocol ___VARIABLE_moduleName___ViewInterface: ViewInterface {
 }
 
+struct ___VARIABLE_moduleName___PresenterInputs {
+	
+}
+
+struct ___VARIABLE_moduleName___PresenterOutputs {
+	
+}
+
+enum ___VARIABLE_moduleName___PresenterEvents {
+    case viewDidLoad
+}
+
 protocol ___VARIABLE_moduleName___PresenterInterface: PresenterInterface {
-    func configure(with output: ___VARIABLE_moduleName___.ViewOutput) -> ___VARIABLE_moduleName___.ViewInput
+	var inputs: ___VARIABLE_moduleName___PresenterInputs { get }
+	var outputs: ___VARIABLE_moduleName___PresenterOutputs { get }
+    var events: PublishSubject<___VARIABLE_moduleName___PresenterEvents> { get }
 }
 
 protocol ___VARIABLE_moduleName___InteractorInterface: InteractorInterface {
-}
-
-enum ___VARIABLE_moduleName___ {
-
-    struct ViewOutput {
-    }
-
-    struct ViewInput {
-    }
-
 }
