@@ -31,7 +31,7 @@ enum ___VARIABLE_moduleName___PresenterEvents {
 }
 
 protocol ___VARIABLE_moduleName___PresenterInterface: PresenterInterface {
-	var inputs: ___VARIABLE_moduleName___PresenterInputs { get }
-	var outputs: ___VARIABLE_moduleName___PresenterOutputs { get }
+    var inputs: ___VARIABLE_moduleName___PresenterInputs { get }
+    var outputs: ___VARIABLE_moduleName___PresenterOutputs { get }
     var events: PublishSubject<___VARIABLE_moduleName___PresenterEvents> { get }
 }
